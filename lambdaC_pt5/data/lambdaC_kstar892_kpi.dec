@@ -1,0 +1,22 @@
+#This is the decay file for the decay lambdaC+ ->p+ kstar892->k- pi+
+#0.016000000 p+      anti-K*0        PYTHIA         0; #[Reconstructed PDG2011]
+# This one should be right, for the branch ratio is right.
+#Decay K*0
+#0.6657      K+  pi-                        VSS;
+##But for the decay K*0, I can not garantee this is the channel that we want.
+Alias        MylambdaC+             Lambda_c+
+Alias        Myanti-lambdaC-        anti-Lambda_c-
+ChargeConj   Myanti-lambdaC-        MylambdaC+
+Alias        Myanti-kstar892        anti-K*0 
+Alias        Mykstar892                K*0      
+ChargeConj   Myanti-kstar892        Mykstar892
+#
+Decay MylambdaC+
+    1.000            p+            Myanti-kstar892        PYTHIA;
+Enddecay
+CDecay Myanti-lambdaC-
+Decay Myanti-kstar892
+    1.000              K-              pi+         VSS;
+Enddecay
+CDecay Mykstar892
+End
