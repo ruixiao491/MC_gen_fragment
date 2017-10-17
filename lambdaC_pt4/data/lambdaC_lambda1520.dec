@@ -1,0 +1,30 @@
+#0.010700000 Lambda0 pi+             PYTHIA         0; #[Reconstructed PDG2011]
+#but compare the branch ratio. this one should be the one that the normal lambda#Decay Lambda(1520)0
+#0.23   p+     K-    PHSP;
+#The lambdaC+ channel is what I add later.
+Alias         MylambdaC+         Lambda_c+
+Alias         Myanti-lambdaC-    anti-Lambda_c-
+ChargeConj    Myanti-lambdaC-    MylambdaC+
+Alias         Mylambda1520       Lambda(1520)0
+Alias         Myanti-lambda1520  anti-Lambda(1520)0
+ChargeConj    Myanti-lambda1520  Mylambda1520
+
+Decay Myanti-lambdaC-
+1.000         Myanti-lambda1520      pi-       PHSP;
+Enddecay
+
+Decay MylambdaC+
+1.000         Mylambda1520      pi+      PHSP;
+Enddecay
+
+#
+Decay Myanti-lambda1520
+1.000          anti-p-     K+       PHSP;
+Enddecay
+
+Decay Mylambda1520
+1.000         p+                 K-       PHSP;
+Enddecay
+
+
+End

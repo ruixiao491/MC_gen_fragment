@@ -1,0 +1,14 @@
+#0.025400000 p+    K-   pi+   PHSP;  #[New mode added] #[Reconstructed PDG2011]
+# This is the decay file for the decay lambdaC->p+k-pi+
+# This branch ratio is almost right. So I assume this one is right.
+Alias         MylambdaC+         Lambda_c+
+Alias         Myanti-lambdaC-    anti-Lambda_c-
+ChargeConj    Myanti-lambdaC-    MylambdaC+
+#
+Decay MylambdaC+
+1.000        p+  K-   pi+    PHSP;
+
+Enddecay
+CDecay Myanti-lambdaC-
+#
+End

@@ -1,0 +1,23 @@
+# 0.008600000 Delta++ K-            PYTHIA         0; #[Reconstructed PDG2011]
+# This one should be right! For the branch ratio is right! So we can search the paticle ID.
+# Decay Delta++
+# 1.0000    p+  pi+                       PHSP;
+# Enddecay
+#
+Alias         MylambdaC+         Lambda_c+
+Alias         Myanti-lambdaC-    anti-Lambda_c-
+ChargeConj    Myanti-lambdaC-    MylambdaC+
+Alias         MyDelta++          Delta++
+Alias         Myanti-Delta--     anti-Delta--
+ChargeConj    Myanti-Delta--     MyDelta++
+#
+Decay MylambdaC+
+1.000         MyDelta++             K-       PYTHIA;
+Enddecay
+CDecay Myanti-lambdaC-
+#
+Decay MyDelta++
+1.000         p+                    pi+      PHSP;
+Enddecay
+CDecay Myanti-Delta--
+End
